@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {fetchPosts} from '../actions';
+
 
  class PostIndex extends Component {
     render(){
@@ -9,4 +12,4 @@ import React, {Component} from 'react';
         );
     }
 }
-export default PostIndex;
+export default connect()(PostIndex);

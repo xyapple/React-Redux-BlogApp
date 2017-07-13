@@ -30,3 +30,11 @@ import promise from 'redux-promise';
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 ```
 7) use axios to do the ajax call inside the actions
+8) work on reducers.
+```
+//Use _.mapKeys()function
+const state = _.mapKeys(posts, 'id')
+
+state['4']
+```
+9) change the postIndex to include the reducer
