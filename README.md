@@ -38,3 +38,10 @@ const state = _.mapKeys(posts, 'id')
 state['4']
 ```
 9) change the postIndex to include the reducer
+```
+//use this
+export default connect(null, {fetchPosts})(PostIndex);
+
+//instead of
+mapDispatch() function
+```

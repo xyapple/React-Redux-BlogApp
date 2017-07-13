@@ -4,6 +4,10 @@ import {fetchPosts} from '../actions';
 
 
  class PostIndex extends Component {
+     //create a event to fetch the posts
+     componentDidMount(){
+        this.props.fetchPosts();
+     }
     render(){
         return(
             <div>
@@ -12,4 +16,4 @@ import {fetchPosts} from '../actions';
         );
     }
 }
-export default connect()(PostIndex);
+export default connect(null, {fetchPosts})(PostIndex);
