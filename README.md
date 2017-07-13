@@ -16,3 +16,17 @@ http://reduxblog.herokuapp.com/
 npm install --save react-router-dom@4.0.0
 ```
 4) understand what react-router-dom do for us in the SPA(single page application)
+
+5) install axios and redux-promise for actions
+```
+npm install --save axios redux-promise
+```
+6) pass promise into the middleware
+```
+//index.js
+//axios and promise
+import promise from 'redux-promise';
+/pass the promise into middleware
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+```
+7) use axios to do the ajax call inside the actions
