@@ -51,3 +51,4 @@ http://redux-form.com/7.0.0/
 ```
 npm install --save redux-form@6.6.3
 ```
+    a)  Form reducer
