@@ -2,22 +2,32 @@ import React, {Component} from 'react';
 import { Field, reduxForm} from 'redux-form';
 
 class  PostsNew extends Component {
+
     renderField(field){
+        const {meta:{touched, error}} =field;
+        const className= `form-group ${touched && error ? 'has-danger': ''}`;
         return(
-            <div className="form-group">
+            <div className="form-group has-danger">
                 <label>{field.labelToShow}</label>
                 <input
                     className="form-control"
                     type="text"
                     {...field.input}
                 />
+                <div className='text-help'>
+                    {touched ? error: ''}
+                </div>
             </div>
         )
     }
+onSubmit(values){
+    console.log(values);
 
+}
     render(){
+        const {handleSubmit}=this.props;
         return(
-        <form >
+        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
             <Field
                 labelToShow="Title"
                 name="title"
@@ -25,15 +35,15 @@ class  PostsNew extends Component {
             />
             <Field
                 labelToShow="Categories"
-                name="tags"
+                name="categories"
                 component={this.renderField}
             />
             <Field
                 labelToShow="Post Content"
-                name="Content"
+                name="content"
                 component={this.renderField}
             />
-
+            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
         );
     }
