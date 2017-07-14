@@ -45,3 +45,9 @@ export default connect(null, {fetchPosts})(PostIndex);
 //instead of
 mapDispatch() function
 ```
+
+10) install Redux-form
+http://redux-form.com/7.0.0/
+```
+npm install --save redux-form@6.6.3
+```
